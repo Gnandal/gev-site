@@ -4,6 +4,9 @@ const PORT = process.env.PORT || 3001;
 
 const server = express();
 
+this.app.use(express.static(
+  path.join(__dirname,"../client/public")));
+
 server.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
   });  
